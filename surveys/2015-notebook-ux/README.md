@@ -1,6 +1,6 @@
 # Jupyter Notebook UX Survey 2015
 
-The CSV file in this folder contains the results of a 16-question survey about the Jupyter Notebook user experience. The survey ran from December 21, 2015 until January 15, 2016. Posts on the [Project Jupyter Google Group](https://groups.google.com/forum/#!topic/jupyter/XCzJ02Rzj0Y), on the [Jupyter blog](http://blog.jupyter.org/2015/12/22/jupyter-notebook-user-experience-survey/), and from the [@ProjectJupyter Twitter account](https://twitter.com/ProjectJupyter/status/684096608166776832) were used to share the survey link and solicit responses. The following introductory text appeared on the first screen of the survey:
+This folder contains the results of a 16-question survey about the Jupyter Notebook user experience. The survey ran on [SurveyGizmo](https://www.surveygizmo.com/) from December 21, 2015 until January 15, 2016. Posts on the [Project Jupyter Google Group](https://groups.google.com/forum/#!topic/jupyter/XCzJ02Rzj0Y), on the [Jupyter blog](http://blog.jupyter.org/2015/12/22/jupyter-notebook-user-experience-survey/), and from the [@ProjectJupyter Twitter account](https://twitter.com/ProjectJupyter/status/684096608166776832) were used to share the survey link and solicit responses. The following introductory text appeared on the first screen of the survey:
 
 > “The purpose of computing is insight, not numbers” ~ R. Hamming.
 
@@ -14,7 +14,14 @@ The CSV file in this folder contains the results of a 16-question survey about t
 
 ## Response Data
 
-There are 1706 rows and 37 columns in the data set. Each row includes values from a single participant session, ending when a user clicked to submit his/her responses (completed) or not (partial). There are 927 partial responses (54%) and 779 complete responses (46%).
+There are 1706 rows and 37 columns in the [20160115235816-SurveyExport.csv](20160115235816-SurveyExport.csv) file. It is a direct export from the survey tool with no preprocessing applied to the response values.
+
+Each row in the CSV represents a single participant survey session, lasting from first visit to the survey URL to either:
+
+1. A click of the submit button at the end of the survey (a *completed* session)
+2. Navigation away from the survey without submission (a *partial* session)
+
+There are 927 partial (54%) and 779 completed sessions (46%) in the data set.
 
 The first 3 columns contain metadata about the session.
 
@@ -22,7 +29,7 @@ Column # | Header         | Description
 -------- | -------------- | -----------
 |0       | Time Started    | The time when the respondant first visited the survey URL in YYYY-MM-DD HH:MM:SS format (GMT-06:00).
 |1       | Date Submitted | If the *Status* is `Completed`, the time when the respondant clicked the submit button in YYYY-MM-DD HH:MM:SS format (GMT-06:00). If the *Status* is `Partial`, the value is the same as the *Time Started*.
-|2       | Status         | Whether the user submitted the survey on the final screen (value `Complete`) or not (value `Partial`)
+|2       | Status         | Whether the user submitted the survey on the final screen (value `Complete`) or left the survey before submission (value `Partial`)
 
 The remaining 34 columns capture the responses to the survey questions. Some questions have multiple response fields and, therefore, repeat in multiple columns. Missing values represent a lack of data entry in one or more response fields.
 
