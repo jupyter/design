@@ -18,17 +18,17 @@ There are 1706 rows and 37 columns in the [20160115235816-SurveyExport.csv](2016
 
 Each row in the CSV represents a single participant survey session, lasting from first visit to the survey URL to either:
 
-1. A click of the submit button at the end of the survey (a *completed* session)
+1. A click of the submit button at the end of the survey (a *complete* session)
 2. Navigation away from the survey without submission (a *partial* session)
 
-There are 927 partial (54%) and 779 completed sessions (46%) in the data set.
+There are 927 partial (54%) and 779 complete sessions (46%) in the data set.
 
 The first 3 columns contain metadata about the session.
 
 Column # | Header         | Description
 -------- | -------------- | -----------
 |0       | Time Started    | The time when the respondant first visited the survey URL in YYYY-MM-DD HH:MM:SS format (GMT-06:00).
-|1       | Date Submitted | If the *Status* is `Completed`, the time when the respondant clicked the submit button in YYYY-MM-DD HH:MM:SS format (GMT-06:00). If the *Status* is `Partial`, the value is the same as the *Time Started*.
+|1       | Date Submitted | If the *Status* is `Complete`, the time when the respondant clicked the submit button in YYYY-MM-DD HH:MM:SS format (GMT-06:00). If the *Status* is `Partial`, the value is the same as the *Time Started*.
 |2       | Status         | Whether the user submitted the survey on the final screen (value `Complete`) or left the survey before submission (value `Partial`)
 
 The remaining 34 columns capture the responses to the survey questions. Some questions have multiple response fields and, therefore, repeat in multiple columns. Missing values represent a lack of data entry in one or more response fields.
