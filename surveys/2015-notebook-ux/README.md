@@ -1,4 +1,4 @@
-# Jupyter Notebook UX Survey 2015
+# Jupyter Notebook UX Survey
 
 This folder contains the results of a 16-question survey about the Jupyter Notebook user experience. The survey ran on [SurveyGizmo](https://www.surveygizmo.com/) from December 21, 2015 until January 15, 2016. Posts on the [Project Jupyter Google Group](https://groups.google.com/forum/#!topic/jupyter/XCzJ02Rzj0Y), on the [Jupyter blog](http://blog.jupyter.org/2015/12/22/jupyter-notebook-user-experience-survey/), and from the [@ProjectJupyter Twitter account](https://twitter.com/ProjectJupyter/status/684096608166776832) were used to share the survey link and solicit responses. The following introductory text appeared on the first screen of the survey:
 
