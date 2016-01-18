@@ -49,7 +49,7 @@ Column # | Type               | Possible values | Question Text
 |29-30   | Multiple selection w/ write-in | (One or more semicolon separated) comfortable, intuitive, convenient, unconfortable, simple, cool, complicated, accessible, confusing, quick, flexible, Other word(s): | 12. Select all the words that best describe Jupyter Notebook.
 |31      | Text               | Any             | 13. What is your primary role when using Jupyter Notebook (e.g., student, astrophysicist, financial modeler, business manager, etc.)?
 |32      | Choice             | Less than 1 year, 1 year, 2-5 years, 5+ years | 14. How many years have you been in this role?
-|33-35   | Text               | Any             | 15. What industries does your role and analytical work support (e.g., Journalism, IT, etc.)?
+|33-35   | Text (x3)          | Any             | 15. What industries does your role and analytical work support (e.g., Journalism, IT, etc.)?
 |36      | Choice             | Tens, Hundreds, Thousands, Tens of thousands, Hundreds of thousands or more | 16. How many people typically see and/or interact with the results of your work in Jupyter Notebook? (Consider people who view your notebooks on nbviewer, colleagues who rerun your notebooks, developers who star your notebook repos on GitHub, audiences who see your notebooks as slideshows, etc.)
 
 ## Credits
