@@ -1,0 +1,742 @@
+;roles_roles;roles_keywords
+1;student,scientist;student,(astro|bio|geo)?physic(s|ist)?
+5;scientist;(astro|bio|geo)?physic(s|ist)?
+6;researcher,financial_analyst,educator;research(er)?,economi(c|st),professor
+7;data_scientist,financial_analyst;data analys(t|is),financial (model(er|ing)|analyst)
+9;researcher,developer;research(er)?,develop(er|ment)
+10;educator;teach(er|ing)
+11;developer;develop(er|ment)
+15;financial_analyst;economi(c|st)
+17;analyst;analytics
+19;;
+21;student;student,phd
+22;researcher;research(er)?
+23;researcher;research(er)?
+26;student;student,phd
+28;student;student
+29;data_scientist;data(\s|-)scien(ce|tist)
+31;financial_analyst;financial (model(er|ing)|analyst),economi(c|st)
+33;independent;secretary
+34;researcher,scientist;research(er)?,^((?!data).)*scientist
+35;researcher,educator;research(er)?,teach(er|ing)
+37;developer,data_scientist;develop(er|ment),data analys(t|is)
+38;engineer;^((?!software).)*engineer
+39;engineer;^((?!software).)*engineer
+40;analyst;^((?!(data|financial)).)*analyst
+41;scientist;neuroscientist,^((?!data).)*scientist
+42;researcher;research(er)?
+43;educator;teach(er|ing)
+46;data_scientist;data(\s|-)scien(ce|tist)
+48;developer;develop(er|ment)
+49;student;student
+51;engineer;^((?!software).)*engineer
+52;developer;develop(er|ment)
+53;scientist;(astro|bio|geo)?physic(s|ist)?
+54;educator;professor
+55;student;student
+56;data_scientist;data(\s|-)scien(ce|tist)
+59;data_scientist;data(\s|-)scien(ce|tist)
+60;researcher;research(er)?
+61;engineer;^((?!software).)*engineer
+63;student,scientist;student,bioinformatic(s|ian)
+64;scientist;(astro|bio|geo)?physic(s|ist)?
+66;student;student
+68;educator;instructor
+69;developer;software (engineer|architect)
+77;student;student
+78;data_scientist;data(\s|-)scien(ce|tist)
+79;data_scientist,independent;data(\s|-)scien(ce|tist),consultant
+81;data_scientist;data analys(t|is)
+83;scientist;^((?!data).)*scientist
+85;scientist;(astro|bio|geo)?physic(s|ist)?
+86;student;student
+87;researcher;research(er)?
+89;developer;software (engineer|architect)
+92;data_scientist;data analys(t|is)
+93;data_scientist;data analys(t|is)
+94;engineer;^((?!software).)*engineer
+95;data_scientist,educator;data analys(t|is),teach(er|ing)
+96;researcher;research(er)?
+97;student;student
+98;data_scientist,analyst;data(\s|-)scien(ce|tist),^((?!(data|financial)).)*analyst
+99;developer;develop(er|ment)
+101;researcher;research(er)?
+102;student,analyst;student,^((?!(data|financial)).)*analyst
+103;data_scientist;data(\s|-)scien(ce|tist)
+104;student;student
+105;data_scientist;data(\s|-)scien(ce|tist)
+107;student,financial_analyst;student,financial (model(er|ing)|analyst)
+109;financial_analyst,analyst;portfolio (analyst|manager),^((?!(data|financial)).)*analyst
+110;;
+117;analyst;^((?!(data|financial)).)*analyst
+118;data_scientist;data(\s|-)scien(ce|tist)
+119;developer;develop(er|ment)
+120;educator;teach(er|ing)
+121;analyst;^((?!(data|financial)).)*analyst
+123;data_scientist;data(\s|-)scien(ce|tist)
+126;student;student
+128;student,data_scientist;student,data analys(t|is)
+129;engineer;^((?!software).)*engineer
+131;student;student,phd
+135;researcher;research(er)?
+138;scientist;^((?!data).)*scientist
+139;student;student
+141;data_scientist;machine learning
+143;developer,scientist;software (engineer|architect),^((?!data).)*scientist
+145;data_scientist;data analys(t|is)
+146;data_scientist;data(\s|-)scien(ce|tist)
+148;developer;develop(er|ment)
+149;scientist;biologi(st|cal)
+150;analyst;^((?!(data|financial)).)*analyst
+151;financial_analyst;financial (model(er|ing)|analyst)
+152;data_scientist;data analys(t|is)
+153;manager,data_scientist;leader,data(\s|-)scien(ce|tist)
+154;data_scientist,engineer;data(\s|-)scien(ce|tist),^((?!software).)*engineer
+155;developer;develop(er|ment)
+157;researcher;research(er)?
+159;engineer;^((?!software).)*engineer
+160;data_scientist;data(\s|-)scien(ce|tist)
+163;developer;software (engineer|architect)
+164;student;student
+165;researcher,independent;research(er)?,independent
+167;engineer;^((?!software).)*engineer
+173;educator;professor
+175;data_scientist;data(\s|-)scien(ce|tist)
+176;researcher,scientist,engineer;r&d($|\W),(astro|bio|geo)?physic(s|ist)?,^((?!software).)*engineer
+179;data_scientist;data(\s|-)scien(ce|tist)
+186;engineer;^((?!software).)*engineer
+194;data_scientist;data analys(t|is)
+198;engineer;^((?!software).)*engineer
+201;;
+204;student;post(\s|-)?doc
+210;educator;instructor
+216;scientist;^((?!data).)*scientist
+219;developer,analyst;develop(er|ment),^((?!(data|financial)).)*analyst
+220;data_scientist;data(\s|-)scien(ce|tist)
+221;developer;develop(er|ment)
+227;developer;software (engineer|architect)
+229;;
+231;financial_analyst;economi(c|st)
+232;researcher;research(er)?
+235;scientist;(astro|bio|geo)?physic(s|ist)?
+237;student,researcher;student,research(er)?
+238;data_scientist;data(\s|-)scien(ce|tist)
+239;scientist;bioinformatic(s|ian)
+240;scientist;(astro|bio|geo)?physic(s|ist)?
+241;developer,scientist;programmer,^((?!data).)*scientist
+242;scientist;(astro|bio|geo)?physic(s|ist)?
+243;student;student,phd
+246;researcher,scientist;research(er)?,(astro|bio|geo)?physic(s|ist)?
+248;analyst;^((?!(data|financial)).)*analyst
+249;researcher;research(er)?
+250;student;student
+252;independent;hobby?(ist)?
+254;data_scientist;data(\s|-)scien(ce|tist)
+258;developer,engineer;develop(er|ment),^((?!software).)*engineer
+259;student;student,phd
+261;student;student
+262;researcher,scientist;research(er)?,(astro|bio|geo)?physic(s|ist)?
+263;data_scientist;data analys(t|is)
+264;researcher,analyst;research(er)?,^((?!(data|financial)).)*analyst
+265;scientist;biologi(st|cal)
+266;scientist;^((?!data).)*scientist
+267;researcher,educator;research(er)?,teach(er|ing)
+268;data_scientist;data(\s|-)scien(ce|tist)
+270;student;student
+271;student;phd
+273;student;student
+275;developer;develop(er|ment)
+277;student;student
+278;financial_analyst;financial (model(er|ing)|analyst)
+279;data_scientist;data(\s|-)scien(ce|tist)
+282;scientist;(astro|bio|geo)?physic(s|ist)?
+284;scientist;(astro|bio|geo)?physic(s|ist)?
+286;scientist;(astro|bio|geo)?physic(s|ist)?
+290;scientist;(astro|bio|geo)?physic(s|ist)?
+292;student;student,phd
+293;data_scientist;data(\s|-)scien(ce|tist)
+295;developer;develop(er|ment)
+298;student;student
+300;data_scientist;data analys(t|is)
+303;student;student
+305;scientist;^((?!data).)*scientist
+307;developer;develop(er|ment)
+308;developer;programmer
+309;scientist;(astro|bio|geo)?physic(s|ist)?
+310;student,scientist;student,^((?!data).)*scientist
+311;data_scientist;data(\s|-)scien(ce|tist)
+312;scientist;^((?!data).)*scientist
+314;data_scientist;data analys(t|is)
+316;data_scientist;data(\s|-)scien(ce|tist)
+323;developer;software (engineer|architect)
+324;student;student,phd
+325;student;student
+330;researcher;r&d($|\W)
+332;scientist;(astro|bio|geo)?physic(s|ist)?
+333;scientist;^((?!data).)*scientist
+334;data_scientist;data analys(t|is)
+336;;
+338;researcher;research(er)?
+340;student;student
+341;scientist;(astro|bio|geo)?physic(s|ist)?
+342;student;student,phd
+344;researcher,manager,scientist;research(er)?,manager,^((?!data).)*scientist
+345;scientist;(astro|bio|geo)?physic(s|ist)?
+346;tester;test(er|ing)
+348;researcher;research(er)?
+350;researcher;research(er)?
+351;educator;teach(er|ing)
+352;researcher;research(er)?
+353;developer;develop(er|ment)
+355;developer;develop(er|ment)
+356;presenter;lecturer
+358;student;student
+360;student;student
+361;developer;programmer
+364;researcher;research(er)?
+365;student;student
+366;;
+368;student;student
+370;researcher,presenter;research(er)?,lecturer
+374;data_scientist;data(\s|-)scien(ce|tist)
+377;researcher;research(er)?
+378;scientist;(astro|bio|geo)?physic(s|ist)?
+384;scientist;bioinformatic(s|ian)
+385;marketer,manager,analyst;market(er|ing),manager,analytics
+387;scientist;(astro|bio|geo)?physic(s|ist)?
+389;developer;develop(er|ment)
+393;educator;instructor
+394;student;student
+396;scientist;(astro|bio|geo)?physic(s|ist)?
+398;researcher,educator;research(er)?,teach(er|ing),professor
+399;developer;programmer
+400;data_scientist;data(\s|-)scien(ce|tist)
+402;manager;manager
+403;researcher;research(er)?
+406;financial_analyst;economi(c|st)
+408;researcher;research(er)?
+411;student,researcher;post(\s|-)?doc,research(er)?
+412;data_scientist;data(\s|-)scien(ce|tist)
+413;researcher;research(er)?
+414;scientist;^((?!data).)*scientist
+418;presenter;lecturer
+419;researcher;research(er)?
+421;;
+425;student;student
+426;educator;educator
+428;scientist;bioinformatic(s|ian)
+430;independent;personal use
+431;scientist;spectroscopist
+434;student;student
+437;data_scientist;data analys(t|is)
+439;manager;leader
+441;researcher,educator;research(er)?,professor
+444;scientist;(astro|bio|geo)?physic(s|ist)?
+445;student;student,phd
+448;statistician;statistician
+450;student,researcher;student,research(er)?
+452;data_scientist,scientist;data analys(t|is),^((?!data).)*scientist
+453;scientist,educator;(astro|bio|geo)?physic(s|ist)?,teach(er|ing)
+456;financial_analyst;financial (model(er|ing)|analyst)
+458;researcher;research(er)?
+460;researcher;research(er)?
+462;student,researcher;student,research(er)?
+463;engineer;^((?!software).)*engineer
+465;researcher,engineer;r&d($|\W),^((?!software).)*engineer
+471;researcher,educator;research(er)?,teach(er|ing),professor
+472;student,developer,scientist;student,phd,develop(er|ment),(astro|bio|geo)?physic(s|ist)?
+473;scientist,educator;(astro|bio|geo)?physic(s|ist)?,teach(er|ing)
+474;researcher;research(er)?
+475;scientist;(astro|bio|geo)?physic(s|ist)?
+480;data_scientist;data(\s|-)scien(ce|tist)
+482;developer,scientist;develop(er|ment),(astro|bio|geo)?physic(s|ist)?
+483;scientist;(astro|bio|geo)?physic(s|ist)?
+486;data_scientist;data(\s|-)scien(ce|tist)
+487;researcher;research(er)?
+488;engineer;^((?!software).)*engineer
+491;scientist;(astro|bio|geo)?physic(s|ist)?
+492;student;student
+493;scientist,engineer;(astro|bio|geo)?physic(s|ist)?,^((?!software).)*engineer
+495;financial_analyst;actuary
+496;scientist;(astro|bio|geo)?physic(s|ist)?,physical science
+498;engineer;^((?!software).)*engineer
+499;presenter;lecturer
+500;researcher;research(er)?
+504;scientist;(astro|bio|geo)?physic(s|ist)?
+505;developer;software (engineer|architect)
+509;financial_analyst;financial (model(er|ing)|analyst)
+515;scientist;(astro|bio|geo)?physic(s|ist)?
+517;developer;develop(er|ment)
+519;;
+524;student;student
+525;developer,data_scientist;programmer,data analys(t|is)
+534;student;student,phd
+535;researcher,engineer;research(er)?,^((?!software).)*engineer
+536;tester;quality assurance
+540;scientist;bioinformatic(s|ian)
+541;developer;develop(er|ment)
+542;author;author
+549;student,scientist;student,(astro|bio|geo)?physic(s|ist)?
+551;financial_analyst;financial (model(er|ing)|analyst)
+556;data_scientist,educator;data(\s|-)scien(ce|tist),teach(er|ing)
+559;developer;software (engineer|architect)
+561;data_scientist;data(\s|-)scien(ce|tist)
+563;student;student
+565;data_scientist;data(\s|-)scien(ce|tist)
+575;developer;develop(er|ment)
+576;researcher;research(er)?
+578;scientist;biologi(st|cal)
+579;data_scientist;data(\s|-)scien(ce|tist)
+580;data_scientist;data analys(t|is)
+584;student,data_scientist;student,machine learning
+587;independent;consultant
+592;engineer;^((?!software).)*engineer
+594;data_scientist;data(\s|-)scien(ce|tist)
+595;financial_analyst;financial (model(er|ing)|analyst)
+600;developer;develop(er|ment)
+604;data_scientist;data analys(t|is)
+605;student;student
+606;developer;programmer
+607;data_scientist;data(\s|-)scien(ce|tist)
+610;analyst;^((?!(data|financial)).)*analyst
+612;developer;software (engineer|architect)
+613;scientist;(astro|bio|geo)?physic(s|ist)?
+616;student;student
+617;developer;develop(er|ment)
+620;data_scientist;data analys(t|is)
+622;financial_analyst;financial (model(er|ing)|analyst)
+623;researcher;research(er)?
+627;educator;teach(er|ing)
+630;student;student
+633;researcher;research(er)?
+638;developer;develop(er|ment)
+640;student;student
+641;financial_analyst;financial (model(er|ing)|analyst)
+643;scientist;(astro|bio|geo)?physic(s|ist)?
+646;researcher,developer;research(er)?,develop(er|ment)
+649;data_scientist;data(\s|-)scien(ce|tist)
+651;researcher,data_scientist;research(er)?,machine learning
+653;student;student,phd
+654;independent,scientist;hobby?(ist)?,epidemiologist
+657;independent;hobby?(ist)?
+661;student,analyst;student,^((?!(data|financial)).)*analyst
+662;data_scientist;data analys(t|is)
+663;tester;test(er|ing)
+664;data_scientist;data analys(t|is)
+666;data_scientist;data(\s|-)scien(ce|tist)
+667;educator;educator
+668;developer;develop(er|ment)
+669;developer;programmer
+671;data_scientist;data(\s|-)scien(ce|tist)
+672;;
+676;scientist;(astro|bio|geo)?physic(s|ist)?
+677;developer;software (engineer|architect)
+681;student;student,phd
+682;developer;develop(er|ment)
+689;;
+694;financial_analyst;financial (model(er|ing)|analyst)
+695;student;student
+700;scientist;neuroscientist,^((?!data).)*scientist
+706;manager;manager
+710;manager,financial_analyst;manager,portfolio (analyst|manager)
+711;scientist;^((?!data).)*scientist
+712;scientist,engineer;^((?!data).)*scientist,^((?!software).)*engineer
+716;developer;programmer
+718;scientist;^((?!data).)*scientist
+719;data_scientist;data(\s|-)scien(ce|tist)
+722;financial_analyst;financial (model(er|ing)|analyst)
+725;researcher;research(er)?
+729;independent;tinkerer
+731;engineer;^((?!software).)*engineer
+732;independent;tinkerer
+738;scientist;biologi(st|cal)
+740;independent;consultant
+741;researcher,developer;research(er)?,develop(er|ment)
+742;manager;manager
+749;student,researcher;student,research(er)?
+750;analyst;^((?!(data|financial)).)*analyst
+753;data_scientist;data(\s|-)scien(ce|tist)
+755;data_scientist;data(\s|-)scien(ce|tist)
+756;student,independent;student,consultant
+757;tester;test(er|ing)
+759;data_scientist;data(\s|-)scien(ce|tist)
+763;engineer;^((?!software).)*engineer
+765;researcher,developer;r&d($|\W),programmer
+766;researcher,engineer;research(er)?,^((?!software).)*engineer
+771;data_scientist,engineer;data(\s|-)scien(ce|tist),^((?!software).)*engineer
+773;data_scientist;data(\s|-)scien(ce|tist)
+780;data_scientist;data(\s|-)scien(ce|tist)
+781;developer;develop(er|ment)
+785;educator;instructor
+786;developer;develop(er|ment)
+791;financial_analyst;financial (model(er|ing)|analyst)
+798;scientist;neuroscientist,^((?!data).)*scientist
+799;engineer;^((?!software).)*engineer
+800;developer;develop(er|ment)
+803;;
+804;student,scientist;student,(astro|bio|geo)?physic(s|ist)?
+806;data_scientist;data(\s|-)scien(ce|tist)
+808;student;student
+814;developer;develop(er|ment)
+815;data_scientist;data analys(t|is)
+816;financial_analyst;quant($|\W)
+821;developer;develop(er|ment)
+823;student,researcher,scientist;student,research(er)?,^((?!data).)*scientist
+824;data_scientist,scientist;data analys(t|is),(astro|bio|geo)?physic(s|ist)?
+828;researcher,data_scientist;research(er)?,machine learning
+829;data_scientist;data(\s|-)scien(ce|tist)
+830;researcher;research(er)?
+835;data_scientist;data(\s|-)scien(ce|tist)
+836;student;student
+837;data_scientist;data analys(t|is)
+838;data_scientist;data(\s|-)scien(ce|tist)
+839;student;student,phd
+841;;
+845;student;student
+846;manager;management
+849;student;post(\s|-)?doc
+851;data_scientist;data(\s|-)scien(ce|tist)
+857;independent;technologist
+859;developer,data_scientist;software (engineer|architect),data(\s|-)scien(ce|tist)
+863;developer;programmer
+864;data_scientist;data(\s|-)scien(ce|tist)
+865;scientist;biologi(st|cal)
+866;researcher;research(er)?
+869;data_scientist;data(\s|-)scien(ce|tist)
+871;statistician;statistician
+872;data_scientist;data(\s|-)scien(ce|tist)
+873;scientist,engineer;^((?!data).)*scientist,^((?!software).)*engineer
+877;student;student
+881;student;student
+884;scientist;(astro|bio|geo)?physic(s|ist)?
+887;data_scientist;data analys(t|is)
+888;student;student
+889;data_scientist;data(\s|-)scien(ce|tist)
+890;data_scientist;data analys(t|is)
+892;scientist;^((?!data).)*scientist
+894;data_scientist;data(\s|-)scien(ce|tist)
+897;analyst;analytics
+898;data_scientist;data(\s|-)scien(ce|tist)
+902;student,developer;student,develop(er|ment)
+904;developer,data_scientist;develop(er|ment),data(\s|-)scien(ce|tist)
+905;student;student
+906;data_scientist;data(\s|-)scien(ce|tist)
+915;developer;develop(er|ment)
+916;tester;test(er|ing)
+918;data_scientist;data(\s|-)scien(ce|tist)
+919;developer;programmer
+922;engineer;^((?!software).)*engineer
+926;engineer;^((?!software).)*engineer
+931;data_scientist;data(\s|-)scien(ce|tist)
+933;scientist;^((?!data).)*scientist
+938;data_scientist;data(\s|-)scien(ce|tist)
+940;researcher,engineer;research(er)?,^((?!software).)*engineer
+947;data_scientist;data(\s|-)scien(ce|tist)
+948;researcher;research(er)?
+951;data_scientist;data(\s|-)scien(ce|tist)
+960;student;student
+964;data_scientist;data(\s|-)scien(ce|tist)
+966;researcher,data_scientist;research(er)?,machine learning
+969;data_scientist;data(\s|-)scien(ce|tist)
+970;student,researcher;student,research(er)?
+971;presenter;lecturer
+972;developer;develop(er|ment)
+974;financial_analyst;financial (model(er|ing)|analyst)
+979;student,scientist;post(\s|-)?doc,geoscienc(es|tist)
+980;developer;software (engineer|architect)
+987;developer,data_scientist;programmer,data explorer
+994;analyst;^((?!(data|financial)).)*analyst
+996;student,scientist;student,phd,(astro|bio|geo)?physic(s|ist)?
+998;data_scientist;data analys(t|is)
+1000;student;student
+1002;developer;develop(er|ment)
+1005;manager;cto($|\W)
+1008;presenter,analyst;presenter,^((?!(data|financial)).)*analyst
+1016;data_scientist;data(\s|-)scien(ce|tist)
+1018;educator;educator
+1020;data_scientist;data analys(t|is)
+1022;developer,analyst;develop(er|ment),analytics
+1024;scientist;(astro|bio|geo)?physic(s|ist)?,neuroscientist,^((?!data).)*scientist
+1026;developer;software (engineer|architect)
+1031;data_scientist;ml($|\W)
+1032;student;student
+1035;student;student
+1040;developer;software (engineer|architect)
+1042;data_scientist;data(\s|-)scien(ce|tist)
+1045;data_scientist;data(\s|-)scien(ce|tist)
+1047;developer;software (engineer|architect)
+1048;researcher,scientist;research(er)?,(astro|bio|geo)?physic(s|ist)?
+1050;data_scientist;data(\s|-)scien(ce|tist)
+1051;student;student
+1053;data_scientist;data(\s|-)scien(ce|tist)
+1054;scientist;^((?!data).)*scientist
+1064;manager;director
+1065;data_scientist;data(\s|-)scien(ce|tist)
+1066;developer;develop(er|ment)
+1067;student;student
+1072;student;student
+1074;student,data_scientist;student,phd,data(\s|-)scien(ce|tist)
+1076;data_scientist;data analys(t|is)
+1083;financial_analyst;financial (model(er|ing)|analyst)
+1087;student;student
+1090;student;student
+1093;researcher;research(er)?
+1095;student;student,phd
+1100;developer,data_scientist;develop(er|ment),machine learning
+1102;financial_analyst;financial (model(er|ing)|analyst)
+1104;student;student
+1106;researcher;research(er)?
+1107;engineer;^((?!software).)*engineer
+1112;student,engineer;student,^((?!software).)*engineer
+1114;student;student
+1116;developer;software (engineer|architect)
+1118;data_scientist;data(\s|-)scien(ce|tist)
+1122;researcher,developer;research(er)?,develop(er|ment)
+1124;developer;develop(er|ment)
+1125;;
+1129;manager,analyst;manager,^((?!(data|financial)).)*analyst
+1131;data_scientist;data analys(t|is)
+1133;data_scientist;data(\s|-)scien(ce|tist)
+1134;engineer;^((?!software).)*engineer
+1135;student;student
+1139;scientist;(astro|bio|geo)?physic(s|ist)?
+1144;researcher,developer;research(er)?,software (engineer|architect)
+1145;data_scientist;data(\s|-)scien(ce|tist)
+1151;data_scientist;data analys(t|is)
+1157;independent;hobby?(ist)?
+1159;developer;develop(er|ment)
+1161;student;student
+1162;student,manager,educator;student,director,teach(er|ing)
+1163;independent;independent
+1164;data_scientist;data(\s|-)scien(ce|tist)
+1166;independent;artist
+1169;student,scientist;student,phd,(astro|bio|geo)?physic(s|ist)?
+1172;analyst;^((?!(data|financial)).)*analyst
+1176;student;student
+1178;developer;develop(er|ment)
+1179;data_scientist;data(\s|-)scien(ce|tist)
+1182;researcher;research(er)?
+1183;developer;develop(er|ment)
+1184;scientist;^((?!data).)*scientist
+1186;researcher;research(er)?
+1188;researcher;research(er)?
+1192;engineer;^((?!software).)*engineer
+1200;developer;software (engineer|architect)
+1204;scientist;cosmological
+1212;researcher,engineer;research(er)?,^((?!software).)*engineer
+1214;data_scientist;data(\s|-)scien(ce|tist)
+1218;scientist;bioinformatic(s|ian)
+1220;researcher,engineer;research(er)?,^((?!software).)*engineer
+1221;statistician;mathematician
+1226;data_scientist;data(\s|-)scien(ce|tist)
+1230;developer,engineer;develop(er|ment),^((?!software).)*engineer
+1233;scientist;neuroscientist,^((?!data).)*scientist
+1234;data_scientist;data(\s|-)scien(ce|tist)
+1236;scientist;(astro|bio|geo)?physic(s|ist)?
+1239;engineer;^((?!software).)*engineer
+1241;developer;software (engineer|architect)
+1242;student;student
+1243;scientist;(astro|bio|geo)?physic(s|ist)?
+1247;student;student
+1249;data_scientist;data(\s|-)scien(ce|tist)
+1253;data_scientist;data(\s|-)scien(ce|tist)
+1254;developer;develop(er|ment)
+1255;data_scientist;data(\s|-)scien(ce|tist)
+1257;student;student
+1258;;
+1261;student;student
+1264;financial_analyst;financial (model(er|ing)|analyst)
+1266;developer;software (engineer|architect)
+1267;data_scientist;data(\s|-)scien(ce|tist)
+1268;scientist;^((?!data).)*scientist
+1270;data_scientist;data(\s|-)scien(ce|tist)
+1272;engineer;^((?!software).)*engineer
+1274;researcher;research(er)?
+1277;data_scientist;data(\s|-)scien(ce|tist)
+1281;student;student
+1282;scientist;neuroscientist,^((?!data).)*scientist
+1285;independent;consultant
+1287;;
+1291;educator;professor
+1296;data_scientist;data analys(t|is)
+1301;data_scientist;data(\s|-)scien(ce|tist)
+1306;developer;develop(er|ment)
+1308;data_scientist;data(\s|-)scien(ce|tist)
+1314;data_scientist;data(\s|-)scien(ce|tist)
+1317;engineer;^((?!software).)*engineer
+1323;developer;software (engineer|architect)
+1324;data_scientist;data analys(t|is)
+1325;independent;consultant
+1332;data_scientist;data(\s|-)scien(ce|tist)
+1333;researcher,scientist;research(er)?,^((?!data).)*scientist
+1334;researcher,educator;research(er)?,teach(er|ing)
+1335;scientist;ecologi(st|cal)
+1337;data_scientist;data(\s|-)scien(ce|tist)
+1342;developer;software (engineer|architect)
+1343;educator;educator
+1347;data_scientist;data analys(t|is)
+1350;engineer;^((?!software).)*engineer
+1354;data_scientist;data(\s|-)scien(ce|tist)
+1355;data_scientist;data(\s|-)scien(ce|tist)
+1356;scientist;(astro|bio|geo)?physic(s|ist)?
+1359;researcher;research(er)?
+1360;engineer;^((?!software).)*engineer
+1363;student,developer;student,develop(er|ment)
+1364;scientist;(astro|bio|geo)?physic(s|ist)?
+1366;student,researcher,financial_analyst;student,research(er)?,financial (model(er|ing)|analyst)
+1368;data_scientist;data analys(t|is)
+1369;data_scientist;machine learning
+1370;researcher;research(er)?
+1371;researcher;research(er)?
+1372;presenter;demonstrator
+1375;data_scientist;data(\s|-)scien(ce|tist)
+1378;scientist;(astro|bio|geo)?physic(s|ist)?
+1379;;
+1381;scientist;neuroscientist,^((?!data).)*scientist
+1382;researcher,scientist;research(er)?,(astro|bio|geo)?physic(s|ist)?
+1383;researcher,scientist;research(er)?,^((?!data).)*scientist
+1384;engineer;^((?!software).)*engineer
+1389;data_scientist;data(\s|-)scien(ce|tist)
+1390;data_scientist;data analys(t|is)
+1393;data_scientist;data(\s|-)scien(ce|tist)
+1395;developer;software (engineer|architect)
+1400;developer;develop(er|ment)
+1402;data_scientist;data(\s|-)scien(ce|tist)
+1406;financial_analyst;financial (model(er|ing)|analyst)
+1408;data_scientist;data explorer
+1409;data_scientist;data(\s|-)scien(ce|tist)
+1412;marketer;market(er|ing)
+1415;data_scientist;data analys(t|is)
+1416;data_scientist;data(\s|-)scien(ce|tist)
+1417;data_scientist;data(\s|-)scien(ce|tist)
+1419;;
+1420;data_scientist;data(\s|-)scien(ce|tist)
+1421;data_scientist,statistician;data(\s|-)scien(ce|tist),statistician
+1425;data_scientist;data(\s|-)scien(ce|tist)
+1426;data_scientist;data(\s|-)scien(ce|tist)
+1427;data_scientist,analyst;data analys(t|is),analytics
+1428;data_scientist;data(\s|-)scien(ce|tist)
+1431;student,engineer;student,^((?!software).)*engineer
+1432;analyst;^((?!(data|financial)).)*analyst
+1434;data_scientist;data(\s|-)scien(ce|tist)
+1437;student,data_scientist;student,data(\s|-)scien(ce|tist)
+1438;student;student
+1441;student;student
+1442;analyst;^((?!(data|financial)).)*analyst
+1444;student,data_scientist;student,machine learning
+1446;scientist;(astro|bio|geo)?physic(s|ist)?
+1447;educator;teach(er|ing)
+1448;data_scientist;data analys(t|is)
+1450;scientist;(astro|bio|geo)?physic(s|ist)?
+1451;researcher;research(er)?
+1453;developer,scientist;develop(er|ment),(astro|bio|geo)?physic(s|ist)?
+1454;engineer;^((?!software).)*engineer
+1456;researcher,developer;research(er)?,develop(er|ment)
+1458;researcher;research(er)?
+1459;educator;professor
+1460;financial_analyst;financial (model(er|ing)|analyst)
+1463;researcher;research(er)?
+1464;student;student,phd
+1466;researcher;research(er)?
+1468;educator;professor
+1469;scientist;(astro|bio|geo)?physic(s|ist)?
+1470;developer,data_scientist;develop(er|ment),machine learning
+1472;scientist;bioinformatic(s|ian)
+1476;manager;manager
+1477;student,educator;student,teach(er|ing)
+1478;data_scientist;data(\s|-)scien(ce|tist)
+1479;developer;develop(er|ment)
+1480;researcher;research(er)?
+1481;author;writer
+1484;data_scientist;data analys(t|is)
+1487;analyst;^((?!(data|financial)).)*analyst
+1490;scientist;(astro|bio|geo)?physic(s|ist)?
+1493;data_scientist;data analys(t|is)
+1494;scientist;bioinformatic(s|ian),^((?!data).)*scientist
+1495;engineer;^((?!software).)*engineer
+1498;researcher;research(er)?
+1502;engineer;^((?!software).)*engineer
+1503;scientist,educator;(astro|bio|geo)?physic(s|ist)?,physical science,^((?!data).)*scientist,educator
+1504;data_scientist;data(\s|-)scien(ce|tist)
+1507;student,scientist;student,(astro|bio|geo)?physic(s|ist)?
+1512;student;student
+1515;scientist;(astro|bio|geo)?physic(s|ist)?
+1517;scientist;bioinformatic(s|ian),^((?!data).)*scientist
+1518;researcher;research(er)?
+1520;statistician;mathematician
+1524;financial_analyst;financial (model(er|ing)|analyst)
+1525;engineer;^((?!software).)*engineer
+1527;data_scientist;data(\s|-)scien(ce|tist)
+1529;student,data_scientist;student,data(\s|-)scien(ce|tist)
+1530;analyst;^((?!(data|financial)).)*analyst
+1531;scientist;(astro|bio|geo)?physic(s|ist)?
+1534;student;student,phd
+1539;scientist;(astro|bio|geo)?physic(s|ist)?
+1541;data_scientist;data(\s|-)scien(ce|tist)
+1551;researcher,educator;research(er)?,teach(er|ing)
+1552;researcher;research(er)?
+1554;scientist;(astro|bio|geo)?physic(s|ist)?
+1556;data_scientist;data analys(t|is)
+1557;developer,analyst;software (engineer|architect),^((?!(data|financial)).)*analyst
+1559;researcher;research(er)?
+1562;student,researcher;student,research(er)?
+1563;student;student
+1564;scientist;^((?!data).)*scientist
+1565;;
+1568;researcher,scientist,educator;research(er)?,(astro|bio|geo)?physic(s|ist)?,teach(er|ing)
+1573;data_scientist;data(\s|-)scien(ce|tist)
+1574;educator;professor
+1575;student;student
+1583;manager,developer,data_scientist;manager,develop(er|ment),data(\s|-)scien(ce|tist)
+1585;educator;teach(er|ing),teaching assistant
+1587;student,scientist;student,phd,(astro|bio|geo)?physic(s|ist)?
+1590;educator;professor
+1593;researcher;research(er)?
+1594;researcher,educator;research(er)?,educator
+1595;student;student,phd
+1598;engineer;^((?!software).)*engineer
+1600;engineer,analyst;^((?!software).)*engineer,analytics
+1601;manager,data_scientist;manager,data(\s|-)scien(ce|tist)
+1603;student;student
+1604;developer;programmer
+1606;student,researcher;student,research(er)?
+1609;scientist,analyst;ecologi(st|cal),^((?!(data|financial)).)*analyst
+1611;scientist;(astro|bio|geo)?physic(s|ist)?
+1616;scientist;(astro|bio|geo)?physic(s|ist)?
+1617;student;student
+1618;data_scientist;data(\s|-)scien(ce|tist)
+1621;researcher;research(er)?
+1622;data_scientist;data(\s|-)scien(ce|tist)
+1623;educator;professor
+1624;presenter;presenter
+1625;data_scientist;data(\s|-)scien(ce|tist)
+1626;scientist;(astro|bio|geo)?physic(s|ist)?
+1630;researcher;research(er)?
+1635;student,researcher,developer;student,research(er)?,programmer
+1637;data_scientist;data(\s|-)scien(ce|tist)
+1638;student;student
+1639;researcher;research(er)?
+1642;student;student
+1644;manager;manager
+1645;researcher;research(er)?
+1650;scientist;(astro|bio|geo)?physic(s|ist)?
+1654;student;student,phd
+1657;scientist;(astro|bio|geo)?physic(s|ist)?
+1661;data_scientist;data analys(t|is)
+1662;engineer;^((?!software).)*engineer
+1667;researcher;research(er)?
+1668;scientist;(astro|bio|geo)?physic(s|ist)?
+1677;student,statistician;student,statistician
+1681;;
+1683;engineer;^((?!software).)*engineer
+1686;student,scientist;student,(astro|bio|geo)?physic(s|ist)?
+1690;scientist;(astro|bio|geo)?physic(s|ist)?
+1691;researcher,independent;research(er)?,hobby?(ist)?
+1693;researcher;research(er)?
+1694;data_scientist;data analys(t|is)
+1695;financial_analyst;economi(c|st)
+1700;scientist;bioinformatic(s|ian)
+1701;tester,developer;test(er|ing),develop(er|ment)
+1702;data_scientist;data(\s|-)scien(ce|tist)
+1704;student;student,phd
+1705;researcher,developer;r&d($|\W),software (engineer|architect)
