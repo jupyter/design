@@ -1,0 +1,60 @@
+<!--
+# Copyright (c) Jupyter Development Team.
+# Distributed under the terms of the Modified BSD License.
+-->
+
+<!--
+Represents a widget that lets the user choose between a set of visualizations for a given survey.
+
+Example:
+
+    <survey-explorer ref="aDataFrame"></survey-explorer>
+
+@element survey-explorer
+-->
+<dom-module id="survey-explorer">
+    <link rel="import" type="css" href="../fontawesome/css/font-awesome.min.css">
+    <template>
+        <paper-dropdown-menu label="Group by" noink no-animations>
+                <paper-menu class="dropdown-content" attr-for-selected="name" selected="{{group_by}}">
+                <paper-item name="no_grouping">-- No grouping --</paper-item>
+                <paper-item name="how_often">How often do you use Jupyter Notebook?</paper-item>
+                <paper-item name="how_long_used">Roughly how long have you been using Jupyter Notebook?</paper-item>
+                <paper-item name="years_in_role">How many years have you been in this job role?</paper-item>
+                <paper-item name="audience_size">How many people typically see and/or interact with the results of your work in Jupyter Notebook?</paper-item>
+                <paper-item name="roles_primary">What is your primary role when using Jupyter Notebook?</paper-item>
+            </paper-menu>
+        </paper-dropdown-menu>
+    <paper-toggle-button checked="{{percentages}}">Use percentages</paper-toggle-button>
+    <urth-core-function id="f1" ref="exploreDataFrame" arg-groupby="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
+    <urth-viz-bar id="c1" datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100}' rotatelabels="25" selection="{{sel}}"></urth-viz-bar>
+    <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="{{sel.0.x}}" result="{{sampleData}}" auto></urth-core-function>
+    <div>Please select a bar above. Showing 10 random answers of {{sel.0.x}}: </div>
+    <urth-viz-table id="sampleResponses" datarows="{{sampleData.data}}" columns="{{sampleData.columns}}"></urth-viz-table>
+    <content></content>
+    </template>
+</dom-module>
+<script>
+
+    'use strict';
+
+    Polymer({
+        is: 'survey-explorer',
+
+        properties: {
+            group_by: {
+                type: String,
+                value: 'no_grouping'
+            },
+            xlabel: {
+                type: String,
+                value: ''
+            },
+            ylabel: {
+                type: String,
+                value: 'Respondents'
+            }
+        }
+    });
+
+</script>
