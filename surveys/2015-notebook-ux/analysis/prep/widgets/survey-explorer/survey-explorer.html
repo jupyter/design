@@ -5,20 +5,17 @@
 
 <!--
 Represents a widget that lets the user choose between a set of visualizations for a given survey.
-
 Example:
-
     <survey-explorer data-frame="aDataFrame" series="roles_roles"></survey-explorer>
-
 @element survey-explorer
 -->
 <dom-module id="survey-explorer">
     <link rel="import" type="css" href="../fontawesome/css/font-awesome.min.css">
     <template>
-        <paper-dropdown-menu label="Choose a series" noink no-animations>
-            <paper-menu class="dropdown-content" attr-for-selected="name" selected="{{selectedSeries}}">
-                <template is="dom-repeat" items="{{series}}">
-                    <paper-item name="{{item}}">{{labelByIndex(index)}}</paper-item>
+        <paper-dropdown-menu id="dd1" label="Choose a series" noink no-animations selected-item-label="{{selectedLabel}}">
+            <paper-menu class="dropdown-content" selected="0">
+                <template is="dom-repeat" items="{{labels}}">
+                    <paper-item>{{item}}</paper-item>
                 </template>
             </paper-menu>
         </paper-dropdown-menu>
@@ -33,7 +30,7 @@ Example:
             </paper-menu>
         </paper-dropdown-menu>
     <paper-toggle-button checked="{{percentages}}">Use percentages</paper-toggle-button>
-    <urth-core-function id="f1" ref="exploreDataFrame" arg-dataframe="{{dataFrame}}" arg-series="{{selectedSeries}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
+    <urth-core-function id="f1" ref="exploreDataFrame" arg-dataframe="{{dataFrame}}" arg-series="{{seriesByLabel(selectedLabel)}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
     <urth-viz-bar id="c1" datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100}' rotatelabels="25" selection="{{sel}}"></urth-viz-bar>
     <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="{{sel.0.x}}" arg-sample_number="10" result="{{sampleData}}" auto></urth-core-function>
     <div>Please select a bar above. Showing 10 random answers of {{sel.0.x}}: </div>
@@ -42,12 +39,9 @@ Example:
     </template>
 </dom-module>
 <script>
-
     'use strict';
-
     Polymer({
         is: 'survey-explorer',
-
         properties: {
             dataFrame: {
                 type: String,
@@ -64,11 +58,11 @@ Example:
                 type: String,
                 value: 'no_grouping'
             },
-            selectedSeries: String,
+            selectedLabel: String,
             percentages: Boolean,
             xlabel: {
                 type: String,
-                computed: 'xlabelText(selectedSeries)',
+                computed: 'xlabelText(selectedLabel)',
                 observer: 'updateChart'
             },
             ylabel: {
@@ -77,31 +71,32 @@ Example:
                 observer: 'updateChart'
             }
         },
-
-        labelByIndex: function(index) {
-            return this.labels[index];    
+        seriesByLabel: function(label) {
+            var index = this.labels.indexOf(label);
+            return this.series[index];
         },
-
-        xlabelText: function(selectedSeries) {
-            var index = this.series.indexOf(selectedSeries);
-            var text = 'Top ' +  this.labelByIndex(index) + ' (10 max)';    
-
+        xlabelText: function(selectedLabel) {
+            var index = this.labels.indexOf(selectedLabel);
+            var text = 'Top ' +  this.labels[index] + ' (10 max)';    
             // workaround since urth-viz-chart doesn't handle axis label updates
-            e1.$.c1.$.chart.chart.xAxis.axisLabel(text);
-            e1.$.c1.$.chart._update();
-
+            if(this.$.c1.$.chart.chart) {
+                this.$.c1.$.chart.chart.xAxis.axisLabel(text);
+                this.$.c1.$.chart._update();
+            } else {
+                this.$.c1.$.chart.xlabel = text;
+            }
             return text;
         },
-
         ylabelText: function(percentages) {
             var text = percentages ? 'Fraction of respondents' : 'Respondents';
-
             // workaround since urth-viz-chart doesn't handle axis label updates
-            e1.$.c1.$.chart.chart.yAxis.axisLabel(text);
-            e1.$.c1.$.chart._update();
-
+            if(this.$.c1.$.chart.chart) {
+                this.$.c1.$.chart.chart.yAxis.axisLabel(text);
+                this.$.c1.$.chart._update();
+            } else {
+                this.$.c1.$.chart.ylabel = text;
+            }
             return text;
         }
     });
-
 </script>
