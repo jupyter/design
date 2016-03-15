@@ -30,9 +30,9 @@ Example:
             </paper-menu>
         </paper-dropdown-menu>
     <paper-toggle-button checked="{{percentages}}">Use percentages</paper-toggle-button>
-    <urth-core-function id="f1" ref="exploreDataFrame" arg-dataframe="{{dataFrame}}" arg-series="{{seriesByLabel(selectedLabel)}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
+    <urth-core-function id="f1" ref="exploreDataFrame" arg-series="{{seriesByLabel(selectedLabel)}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
     <urth-viz-bar id="c1" datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100}' rotatelabels="25" selection="{{sel}}"></urth-viz-bar>
-    <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="{{sel.0.x}}" arg-sample_number="10" result="{{sampleData}}" auto></urth-core-function>
+    <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="{{sel.0.x}}" arg-sample_size="10" result="{{sampleData}}" auto></urth-core-function>
     <div>Please select a bar above. Showing 10 random answers of {{sel.0.x}}: </div>
     <urth-viz-table id="sampleResponses" datarows="{{sampleData.data}}" columns="{{sampleData.columns}}"></urth-viz-table>
     <content></content>
@@ -43,10 +43,6 @@ Example:
     Polymer({
         is: 'survey-explorer',
         properties: {
-            dataFrame: {
-                type: String,
-                value: 'df'
-            },
             series: {
                 type: Array
             },
