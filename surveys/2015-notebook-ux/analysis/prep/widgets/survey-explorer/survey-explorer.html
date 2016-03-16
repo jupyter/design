@@ -10,7 +10,6 @@ Example:
 @element survey-explorer
 -->
 <dom-module id="survey-explorer">
-    <link rel="import" type="css" href="../fontawesome/css/font-awesome.min.css">
     <template>
         <paper-dropdown-menu id="dd1" label="Choose a series" noink no-animations selected-item-label="{{selectedLabel}}">
             <paper-menu class="dropdown-content" selected="0">
@@ -52,7 +51,8 @@ Example:
             },
             group_by: {
                 type: String,
-                value: 'no_grouping'
+                value: 'no_grouping',
+                observer: '_group_byChanged'
             },
             selectedLabel: String,
             percentages: Boolean,
@@ -64,6 +64,10 @@ Example:
                 type: String,
                 computed: 'ylabelText(percentages)'
             }
+        },
+        _group_byChanged: function() {
+            // reset chart selection
+            this.$.c1.selection = [];
         },
         seriesByLabel: function(label) {
             var index = this.labels.indexOf(label);
