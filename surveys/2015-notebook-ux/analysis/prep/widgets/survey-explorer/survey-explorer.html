@@ -31,9 +31,23 @@ Example:
         <paper-toggle-button checked="{{percentages}}">Use percentages</paper-toggle-button>
         <urth-core-function id="f1" ref="exploreDataFrame" arg-series="{{seriesByLabel(selectedLabel)}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
         <urth-viz-bar id="c1" datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100, "right":50}' rotatelabels="25" selection="{{sel}}"></urth-viz-bar>
-        <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" auto></urth-core-function>
-        <div>Please select a bar above. Showing random answers of [[sel.0.x]] grouped by [[sel.0.key]]: </div>
-        <urth-viz-table id="sampleResponses" datarows="{{sampleData.data}}" columns="{{sampleData.columns}}"></urth-viz-table>
+        <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
+        <div>
+            <em>Select a bar above.</em>
+            <template is="dom-if" if="[[sel]]">
+                <span>Showing a random sample of up to 10 responses matching "[[sel.0.x]]" grouped by "[[sel.0.key]]".</span>
+            </template>
+        </div>
+        <div style="max-height:300px; overflow:auto;">
+           <template is="dom-repeat" items="[[sampleData.data]]">
+               <template is="dom-repeat" items="[[item]]">
+                   <template is="dom-if" if="[[item]]">
+                       <p>[[item]]</p>
+                   </template>
+               </template>
+               <hr />
+           </template>
+        </div>
         <content></content>
     </template>
 </dom-module>
@@ -63,6 +77,9 @@ Example:
             ylabel: {
                 type: String,
                 computed: 'ylabelText(percentages)'
+            },
+            sampleSource: {
+                type: Array
             }
         },
         _group_byChanged: function() {
@@ -95,6 +112,9 @@ Example:
                 this.$.c1.$.chart.ylabel = text;
             }
             return text;
+        },
+        rowToText: function(row) {
+            return row.join('<br />');
         }
     });
 </script>
