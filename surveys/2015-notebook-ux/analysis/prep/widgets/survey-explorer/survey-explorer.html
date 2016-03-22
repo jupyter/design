@@ -13,7 +13,7 @@ Example:
     <template>
         <paper-dropdown-menu id="dd1" label="Choose a series" noink no-animations selected-item-label="{{selectedLabel}}">
             <paper-menu class="dropdown-content" selected="0">
-                <template is="dom-repeat" items="{{labels}}">
+                <template is="dom-repeat" items="[[labels]]">
                     <paper-item>{{item}}</paper-item>
                 </template>
             </paper-menu>
@@ -38,7 +38,7 @@ Example:
         <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
         <div>
             <em>Select a bar above.</em>
-            <template is="dom-if" if="[[sel]]">
+            <template is="dom-if" if="{{sel.length}}">
                 <span>Showing a random sample of up to 10 responses matching "[[sel.0.x]]" grouped by "[[sel.0.key]]".</span>
             </template>
         </div>
@@ -60,19 +60,17 @@ Example:
     Polymer({
         is: 'survey-explorer',
         properties: {
-            series: {
-                type: Array
-            },
-            labels: {
-                type: Array,
-                value: ['Keyword patterns', 'Annotator themes']
-            },
+            series: Array,
             group_by: {
                 type: String,
                 value: 'no_grouping',
                 observer: '_group_byChanged'
             },
-            selectedLabel: String,
+            labels: Array,
+            selectedLabel: {
+                type: String,
+                observer: '_selectedLabelChanged'
+            },
             percentages: Boolean,
             xlabel: {
                 type: String,
@@ -80,13 +78,24 @@ Example:
             },
             ylabel: {
                 type: String,
-                computed: 'ylabelText(percentages)'
+                computed: 'ylabelText(percentages, group_by)'
             },
-            sampleSource: {
-                type: Array
+            sampleSource: Array
+        },
+        getLabels: function() {
+            if (!this.series) return;
+
+            if (this.series.length == 1) {
+                return ['Keyword patterns'];
+            } else {
+                return ['Keyword patterns', 'Annotator themes'];
             }
         },
         _group_byChanged: function() {
+            // reset chart selection
+            this.$.c1.selection = [];
+        },
+        _selectedLabelChanged: function() {
             // reset chart selection
             this.$.c1.selection = [];
         },
@@ -96,8 +105,7 @@ Example:
         },
         xlabelText: function(selectedLabel) {
             var index = this.labels.indexOf(selectedLabel);
-            var text = 'Top ' +  this.labels[index] + ' (10 max)';  
-
+            var text = 'Top ' +  this.labels[index] + ' (10 max)';    
             // workaround since urth-viz-chart doesn't handle axis label updates
             //BEGIN
             if(this.$.c1.$.chart.chart) {
@@ -111,7 +119,9 @@ Example:
         },
         ylabelText: function(percentages) {
             var text = percentages ? 'Fraction of respondents' : 'Respondents';
-
+            if (this.group_by && this.group_by != 'no_grouping') {
+                text += ' grouped by ' + this.group_by;
+            }
             // workaround since urth-viz-chart doesn't handle axis label updates
             //BEGIN
             if(this.$.c1.$.chart.chart) {
@@ -125,6 +135,10 @@ Example:
         },
         rowToText: function(row) {
             return row.join('<br />');
+        },
+
+        ready: function() {
+            this.labels = this.getLabels();
         }
     });
 </script>
