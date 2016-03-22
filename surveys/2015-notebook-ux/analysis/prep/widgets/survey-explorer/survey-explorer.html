@@ -105,32 +105,13 @@ Example:
         },
         xlabelText: function(selectedLabel) {
             var index = this.labels.indexOf(selectedLabel);
-            var text = 'Top ' +  this.labels[index] + ' (10 max)';    
-            // workaround since urth-viz-chart doesn't handle axis label updates
-            //BEGIN
-            if(this.$.c1.$.chart.chart) {
-                this.$.c1.$.chart.chart.xAxis.axisLabel(text);
-                this.$.c1.$.chart._update();
-            } else {
-                this.$.c1.$.chart.xlabel = text;
-            }
-            //END
-            return text;
+            return 'Top ' +  this.labels[index] + ' (10 max)';    
         },
         ylabelText: function(percentages) {
             var text = percentages ? 'Fraction of respondents' : 'Respondents';
             if (this.group_by && this.group_by != 'no_grouping') {
                 text += ' grouped by ' + this.group_by;
             }
-            // workaround since urth-viz-chart doesn't handle axis label updates
-            //BEGIN
-            if(this.$.c1.$.chart.chart) {
-                this.$.c1.$.chart.chart.yAxis.axisLabel(text);
-                this.$.c1.$.chart._update();
-            } else {
-                this.$.c1.$.chart.ylabel = text;
-            }
-            //END
             return text;
         },
         rowToText: function(row) {
