@@ -36,20 +36,20 @@ Example:
             </template>
         </urth-viz-bar>
         <urth-core-function ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
-        <div style="background-color: #ccc; padding: 10px;">
+        <div style="background-color: #ddd; padding: 10px;">
             <em>Select a bar above.</em>
             <template is="dom-if" if="{{sel.length}}">
                 <span>Showing a random sample of up to 10 responses for "[[sel.0.x]]" in the "[[sel.0.key]]" group.</span>
             </template>
         </div>
-        <div style="max-height:300px; overflow:auto; margin-top: 15px;">
+        <div style="max-height:300px; overflow:auto; background-color: #eee; border: 1px solid #ccc;">
            <template is="dom-repeat" items="[[sampleData.data]]">
                <template is="dom-repeat" items="[[item]]">
                    <template is="dom-if" if="[[item]]">
-                       <div style="padding-left:15px; padding-right: 15px;">[[item]]</div>
+                       <div style="padding: 15px; background-color: white;">[[item]]</div>
                    </template>
                </template>
-               <hr />
+               <hr style="padding: 0; margin: 0;"/>
            </template>
         </div>
         <content></content>
