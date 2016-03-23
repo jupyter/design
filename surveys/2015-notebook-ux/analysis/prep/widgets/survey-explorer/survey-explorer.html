@@ -11,9 +11,9 @@ Example:
 -->
 <dom-module id="survey-explorer">
     <template>
-        <paper-dropdown-menu id="dd1" label="Choose a series" noink no-animations selected-item-label="{{selectedLabel}}">
+        <paper-dropdown-menu label="Choose a series" noink no-animations selected-item-label="{{selectedLabel}}">
             <paper-menu class="dropdown-content" selected="0">
-                <template is="dom-repeat" items="[[labels]]">
+                <template is="dom-repeat" items="[[labelSlice(labels,series)]]">
                     <paper-item>{{item}}</paper-item>
                 </template>
             </paper-menu>
@@ -29,13 +29,13 @@ Example:
             </paper-menu>
         </paper-dropdown-menu>
         <paper-toggle-button checked="{{percentages}}">Use percentages</paper-toggle-button>
-        <urth-core-function id="f1" ref="exploreDataFrame" arg-series="{{seriesByLabel(selectedLabel)}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
-        <urth-viz-bar id="c1" datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100, "right":50}' rotatelabels="25" selection="{{sel}}">
+        <urth-core-function ref="exploreDataFrame" arg-series="{{seriesByLabel(selectedLabel)}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
+        <urth-viz-bar datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100, "right":50}' rotatelabels="25" selection="{{sel}}">
             <template is="dom-if" if="{{percentages}}" restamp="true">
                 <urth-viz-col index="1" type="numeric" format="%"></urth-viz-col>
             </template>
         </urth-viz-bar>
-        <urth-core-function id="getSampleFunc" ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
+        <urth-core-function ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
         <div style="background-color: #ccc; padding: 10px;">
             <em>Select a bar above.</em>
             <template is="dom-if" if="{{sel.length}}">
@@ -64,12 +64,15 @@ Example:
             group_by: {
                 type: String,
                 value: 'no_grouping',
-                observer: '_group_byChanged'
+                observer: 'resetSelection'
             },
-            labels: Array,
+            labels: {
+                type: Array,
+                value: function () { return ['Keyword patterns', 'Annotator themes']; }
+            },
             selectedLabel: {
                 type: String,
-                observer: '_selectedLabelChanged'
+                observer: 'resetSelection'
             },
             percentages: Boolean,
             xlabel: {
@@ -82,44 +85,25 @@ Example:
             },
             sampleSource: Array
         },
-        getLabels: function() {
-            if (!this.series) return;
-
-            if (this.series.length == 1) {
-                return ['Keyword patterns'];
-            } else {
-                return ['Keyword patterns', 'Annotator themes'];
-            }
+        labelSlice: function(labels, series) {
+            return series ? labels.slice(0, series.length) : [];
         },
-        _group_byChanged: function() {
-            // reset chart selection
-            this.$.c1.selection = [];
-        },
-        _selectedLabelChanged: function() {
-            // reset chart selection
-            this.$.c1.selection = [];
+        resetSelection: function() {
+            this.sel = [];
         },
         seriesByLabel: function(label) {
             var index = this.labels.indexOf(label);
             return this.series[index];
         },
         xlabelText: function(selectedLabel) {
-            var index = this.labels.indexOf(selectedLabel);
-            return 'Top ' +  this.labels[index] + ' (10 max)';    
+            return 'Top ' +  selectedLabel + ' (10 max)';    
         },
-        ylabelText: function(percentages) {
+        ylabelText: function(percentages, group_by) {
             var text = percentages ? 'Fraction of respondents' : 'Respondents';
-            if (this.group_by && this.group_by != 'no_grouping') {
-                text += ' grouped by ' + this.group_by;
+            if (group_by && group_by != 'no_grouping') {
+                text += ' grouped by ' + group_by;
             }
             return text;
-        },
-        rowToText: function(row) {
-            return row.join('<br />');
-        },
-
-        ready: function() {
-            this.labels = this.getLabels();
         }
     });
 </script>
