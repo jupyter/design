@@ -42,7 +42,7 @@ Example:
                 <span>Showing a random sample of up to 10 responses for "[[sel.0.x]]" in the "[[sel.0.key]]" group.</span>
             </template>
         </div>
-        <div style="max-height:300px; overflow:auto; background-color: #eee; border: 1px solid #ccc;">
+        <div style="max-height:300px; min-height:300px; overflow:auto; background-color: #eee; border: 1px solid #ccc;">
            <template is="dom-repeat" items="[[sampleData.data]]">
                <template is="dom-repeat" items="[[item]]">
                    <template is="dom-if" if="[[item]]">
@@ -99,7 +99,7 @@ Example:
             return 'Top ' +  selectedLabel + ' (15 max)';    
         },
         ylabelText: function(percentages, group_by) {
-            var text = percentages ? 'Fraction of respondents' : 'Respondents';
+            var text = percentages ? 'Percentage of respondents' : 'Respondents';
             if (group_by && group_by != 'no_grouping') {
                 text += ' grouped by ' + group_by;
             }
