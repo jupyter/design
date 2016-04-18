@@ -10,7 +10,24 @@ Example:
 @element survey-explorer
 -->
 <dom-module id="survey-explorer">
-    <template>
+    <template is="dom-bind">
+        <style>
+        .select-bar {
+          background-color: #ddd; padding: 10px;
+        }
+
+        .item-list {
+          max-height: 300px; min-height: 300px; overflow: auto; background-color: #eee; border: 1px solid #ccc;
+        }
+
+        .item-list hr {
+          padding: 0; margin: 0;
+        }
+
+        .item {
+          padding: 15px; background-color: white;
+        }
+        </style>
         <paper-dropdown-menu label="Choose a series" noink no-animations selected-item-label="{{selectedLabel}}">
             <paper-menu class="dropdown-content" selected="0">
                 <template is="dom-repeat" items="[[labelSlice(labels,series)]]">
@@ -30,26 +47,26 @@ Example:
         </paper-dropdown-menu>
         <paper-toggle-button checked="{{percentages}}">Use percentages</paper-toggle-button>
         <urth-core-function ref="exploreDataFrame" arg-series="{{seriesByLabel(selectedLabel)}}" arg-group_by="{{group_by}}" arg-percentages="{{percentages}}" result="{{df}}" auto></urth-core-function>
-        <urth-viz-bar datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100, "right":50}' rotatelabels="25" selection="{{sel}}">
+        <urth-viz-bar datarows="{{df.data}}" columns="{{df.columns}}" xlabel="{{xlabel}}" ylabel="{{ylabel}}"  margin='{"bottom":100, "right":50}' rotatelabels="25" selection-info="{{sel}}">
             <template is="dom-if" if="{{percentages}}" restamp="true">
                 <urth-viz-col index="1" type="numeric" format="%"></urth-viz-col>
             </template>
         </urth-viz-bar>
         <urth-core-function ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
-        <div style="background-color: #ddd; padding: 10px;">
+        <div class="select-bar">
             <em>Select a bar above.</em>
             <template is="dom-if" if="{{sel.length}}">
                 <span>Showing a random sample of up to 10 responses for "[[sel.0.x]]" in the "[[sel.0.key]]" group.</span>
             </template>
         </div>
-        <div style="max-height:300px; min-height:300px; overflow:auto; background-color: #eee; border: 1px solid #ccc;">
+        <div class="item-list">
            <template is="dom-repeat" items="[[sampleData.data]]">
                <template is="dom-repeat" items="[[item]]">
                    <template is="dom-if" if="[[item]]">
-                       <div style="padding: 15px; background-color: white;">[[item]]</div>
+                       <div class="item">[[item]]</div>
                    </template>
                </template>
-               <hr style="padding: 0; margin: 0;"/>
+               <hr/>
            </template>
         </div>
         <content></content>
