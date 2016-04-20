@@ -52,11 +52,11 @@ Example:
                 <urth-viz-col index="1" type="numeric" format="%"></urth-viz-col>
             </template>
         </urth-viz-bar>
-        <urth-core-function ref="getSample" arg-keyword="[[sel.0.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.0.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
+        <urth-core-function ref="getSample" arg-keyword="[[sel.x]]" arg-groupby="[[group_by]]" arg-sample_size="10" result="{{sampleData}}" arg-groupby_key="[[sel.key]]" arg-series="{{seriesByLabel(selectedLabel)}}" arg-sample_source="{{sampleSource}}" auto></urth-core-function>
         <div class="select-bar">
             <em>Select a bar above.</em>
-            <template is="dom-if" if="{{sel.length}}">
-                <span>Showing a random sample of up to 10 responses for "[[sel.0.x]]" in the "[[sel.0.key]]" group.</span>
+            <template is="dom-if" if="{{sel}}">
+                <span>Showing a random sample of up to 10 responses for "[[sel.x]]" in the "[[sel.key]]" group.</span>
             </template>
         </div>
         <div class="item-list">
@@ -106,7 +106,7 @@ Example:
             return series ? labels.slice(0, series.length) : [];
         },
         resetSelection: function() {
-            this.sel = [];
+            this.sel = null;
         },
         seriesByLabel: function(label) {
             var index = this.labels.indexOf(label);
