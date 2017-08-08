@@ -1,0 +1,401 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, https://hakim.se
+ */
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+
+
+:root {
+  --jupyter-orange: #F37626;
+  --jupyter-dark-orange: #d25200;
+  --jupyter-grey-0:  #2c2c2c;
+  --jupyter-grey-I:  #4d4d4d;
+  --jupyter-grey-II: #616161;
+  --jupyter-grey-III: #757575;
+  --jupyter-grey-IV: #9e9e9e;
+}
+
+
+
+body {
+  background-color: var(--jupyter-grey-0);
+  counter-reset: section; 
+  color: white;
+  }
+
+.reveal {
+  font-family: 'Myriad Pro', "Helvetica Neue", 'PT Sans',  sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white; }
+
+
+.slide-background:before {
+    content: "";
+    position: fixed;
+    left:  55vw;
+    min-width: 80vw; 
+    max-width: 120vw; 
+    min-height: 80vh;  
+    max-height: 120vh;  
+    opacity: 0.05; 
+    z-index: -1;
+    background-image: url("greylogo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.reveal .slide-background.jupyter-light {
+    color: var(--jupyter-grey-I); 
+    background-color: white;
+}
+
+.jupyter-light.slide-background:before {
+    color: var(--jupyter-grey-I); 
+    background-image: url("colorlogo.png");
+    background-color: white;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+::selection {
+  color: #fff;
+  background: #69B978;
+  text-shadow: none; }
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  margin: 2.5rem 0 2.5rem 0;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: none;
+  text-shadow: none;
+  word-wrap: break-word; }
+
+.reveal h1,  .reveal h3,  .reveal h5 {
+  color: var(--jupyter-orange);
+}
+
+.reveal .jupyter-light , .reveal .jupyter-light h2, .reveal .jupyter-light h4, .reveal .jupyter-light h6{
+  color: var(--jupyter-grey-I); 
+}
+
+
+/* fix for first slidewith background. */
+
+.reveal.has-dark-background h1, .reveal.has-dark-background h2, .reveal.has-dark-background h3, .reveal.has-dark-background h4, .reveal.has-dark-background h5, .reveal.has-dark-background h6 {
+  color: #fff; }
+
+.reveal h1 {
+  font-size: 4rem; }
+
+.reveal h2 {
+  font-size: 2.5rem; }
+
+.reveal h3 {
+  font-size: 2rem; }
+
+.reveal h4 {
+  font-size: 1rem; }
+
+.reveal h1 {
+  text-shadow: none; }
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 2.5rem 0;
+  line-height: 1.3; 
+  font-family: "Helvetica Neue";
+  }
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-height: 50vh;
+  max-width: 60vh;
+  width: auto;
+  height: auto;
+}
+
+.reveal .progress {
+    height: 9px;
+}
+.reveal strong,
+.reveal b {
+  font-weight: 400; 
+  color: var(--jupyter-orange);
+}
+
+.reveal em {
+  font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+.reveal ol {
+  list-style-type: decimal; }
+
+.reveal ul {
+  list-style-type: circle; 
+  }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 2.5rem auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(240, 240, 240, 1.0);
+}
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+.reveal q {
+  font-style: italic; }
+
+.reveal pre {
+  display: block;
+  position: relative;
+  margin: 2.5rem auto;
+  text-align: left;
+  font-size: 0.9em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+.reveal code {
+  font-family: monospace; }
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  word-wrap: normal;
+  background: #3F3F3F;
+  color: #DCDCDC; }
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+.reveal table tr:last-child td {
+  border-bottom: none; }
+
+.reveal sup {
+  vertical-align: super; }
+
+.reveal sub {
+  vertical-align: sub; }
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+.reveal small * {
+  vertical-align: top; }
+
+.reveal .text-left {
+  text-align: left; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: var(--jupyter-orange);
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 1em;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:hover {
+  color: var(--jupyter-dark-orange);
+  text-shadow: none;
+  border: none; }
+
+.reveal.has-dark-background a {
+  color: var(--jupyter-dark-orange);
+  text-decoration: var(--jupyter-dark-orange);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%); }
+
+.reveal.has-dark-background a:hover {
+  color: #fff; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #0d0d0d; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img.thumbnail {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: var(--jupyter-orange); }
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: var(--jupyter-orange); }
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: var(--jupyter-orange); }
+
+.reveal .controls div.navigate-down,
+.reveal .controls button .navigate-down{
+  border-top-color: var(--jupyter-orange);!important }
+
+.reveal .controls .navigate-left  { border-right-color:var(--jupyter-orange);!important}
+.reveal .controls .navigate-right { border-left-color: var(--jupyter-orange);!important}
+.reveal .controls .navigate-up   { border-bottom-color: var(--jupyter-orange);!important}
+.reveal .controls .navigate-down { border-top-color: var(--jupyter-orange);!important}
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #111; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #111; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #111; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #111; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: var(--jupyter-orange);
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  color: var(--jupyter-orange); }
+
+section.intro.past {
+  display: block !important; }
+
+.reveal .intro h1:before, .reveal .intro h2:before, .reveal .intro h3:before {
+  counter-increment: section;
+  content: counter(section);
+  background-color: var(--jupyter-grey-0);
+  display: table;
+  margin: 0 auto 40px;
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  line-height: 1.5em; }
+
+/*********************************************
+ * SLIDE MASTER
+ *********************************************/
+
+.reveal q, .reveal blockquote {
+    quotes: none;
+    background-color: var(--jupyter-grey-IV);
+    quotes: '\201C' '\201D';
+}
+
+blockquote:before {
+  content: open-quote;
+  float:left;
+  font-size: 4em;
+  line-height: 0.5em;
+  height: 0px;
+  left: -45px;
+  position: relative;
+}
+
+blockquote:after {
+  float:right;
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.5em;
+  height: 0px;
+}
