@@ -10,3 +10,6 @@ README page, rather than individual files.
 
 The Jupyter Brand Guide can be found [here](https://github.com/jupyter/design/raw/master/brandguide/jupyter_brand_guide.pdf).
 
+# UX Survey
+
+The 2015 notebook UX survey that used to reside in this repository now lives in https://github.com/jupyter/surveys along with other Project Jupyter datasets.
